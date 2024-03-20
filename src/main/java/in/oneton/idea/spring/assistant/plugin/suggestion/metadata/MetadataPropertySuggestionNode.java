@@ -13,8 +13,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.gradle.internal.impldep.gnu.trove.THashSet;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.coverage.gnu.trove.THashSet;
 
 import javax.annotation.Nullable;
 import java.util.List;

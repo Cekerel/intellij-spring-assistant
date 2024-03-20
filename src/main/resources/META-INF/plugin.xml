@@ -1,10 +1,10 @@
 <idea-plugin url="https://github.com/ErickPang/intellij-spring-assistant">
 
     <id>in.1ton.idea.spring.assistant.plugin</id>
-    <name>Spring-Helper</name>
+    <name>Spring-Assistant-For-Community</name>
     <!-- Will be auto populated by plugin -->
-    <vendor email="pangerick@163.com" url="https://github.com/ErickPang/">
-        lingfengerick
+    <vendor email="zt1335204909@gmail.com" url="https://github.com/Cekerel/">
+        cekerel
     </vendor>
 
     <!-- Will be auto populated by plugin -->

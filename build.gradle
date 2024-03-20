@@ -18,12 +18,12 @@ buildscript {
 plugins {
     id 'java'
     id 'idea'
-    id 'org.jetbrains.intellij' version '1.15.0'
+    id 'org.jetbrains.intellij' version '1.17.2'
 }
 
 
 group = 'in.oneton.idea.spring'
-version = '2023.2'
+version = '2023.3'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -72,7 +72,7 @@ clean.doFirst {
 intellij {
     type = 'IC'
 //    version = '232.8453-EAP-CANDIDATE-SNAPSHOT'
-    version = '2023.2'
+    version = '2023.3'
     pluginName = 'intellij-spring-helper'
     plugins = ['java', 'properties', 'yaml', 'maven', 'gradle']
     updateSinceUntilBuild = false
@@ -86,8 +86,8 @@ tasks{
 //        channels 'eap', 'nightly', 'default'
 //    }
     patchPluginXml {
-        sinceBuild = '232'
-        untilBuild = '232.*'
+        sinceBuild = '233'
+        untilBuild = '233.*'
         pluginDescription = provider {readmeXmlAsHtml()}
         changeNotes = provider {changeLogAsHtml()}
     }

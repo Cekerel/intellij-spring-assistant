@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.collections4.Trie;
 import org.apache.commons.collections4.trie.PatriciaTrie;
-import org.jetbrains.coverage.gnu.trove.THashMap;
+import org.gradle.internal.impldep.gnu.trove.THashMap;
 
 import javax.annotation.Nullable;
 import java.util.Collection;

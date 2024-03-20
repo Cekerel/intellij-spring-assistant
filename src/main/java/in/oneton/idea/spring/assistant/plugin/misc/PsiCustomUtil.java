@@ -31,12 +31,11 @@ import com.intellij.util.TimeoutUtil;
 import in.oneton.idea.spring.assistant.plugin.suggestion.SuggestionNodeType;
 import in.oneton.idea.spring.assistant.plugin.suggestion.clazz.GenericClassMemberWrapper;
 import lombok.experimental.UtilityClass;
+import org.gradle.internal.impldep.gnu.trove.THashMap;
+import org.gradle.internal.impldep.gnu.trove.THashSet;
+import org.gradle.internal.impldep.gnu.trove.TObjectHashingStrategy;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.coverage.gnu.trove.THashMap;
-import org.jetbrains.coverage.gnu.trove.THashSet;
-import org.jetbrains.coverage.gnu.trove.TObjectHashingStrategy;
-
 import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.Map;

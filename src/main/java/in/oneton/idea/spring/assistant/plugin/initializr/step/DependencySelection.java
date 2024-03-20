@@ -25,10 +25,10 @@ import in.oneton.idea.spring.assistant.plugin.initializr.metadata.InitializerMet
 import in.oneton.idea.spring.assistant.plugin.initializr.metadata.InitializerMetadata.IdAndNameComposite;
 import in.oneton.idea.spring.assistant.plugin.initializr.metadata.io.spring.initializr.util.Version;
 import in.oneton.idea.spring.assistant.plugin.initializr.step.DependencyGroupAndDependency.DependencyGroupAndDependencyAdapter;
+import org.gradle.internal.impldep.gnu.trove.THashMap;
+import org.gradle.internal.impldep.gnu.trove.THashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.coverage.gnu.trove.THashMap;
-import org.jetbrains.coverage.gnu.trove.THashSet;
 
 import javax.swing.*;
 import javax.swing.border.Border;

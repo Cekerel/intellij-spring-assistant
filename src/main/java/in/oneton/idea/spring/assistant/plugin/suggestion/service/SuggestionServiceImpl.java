@@ -9,8 +9,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.OrderEnumerator;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import in.oneton.idea.spring.assistant.plugin.suggestion.Suggestion;
 import in.oneton.idea.spring.assistant.plugin.suggestion.SuggestionNode;
 import in.oneton.idea.spring.assistant.plugin.suggestion.completion.FileType;
@@ -27,9 +25,9 @@ import in.oneton.idea.spring.assistant.plugin.suggestion.metadata.json.SpringCon
 import in.oneton.idea.spring.assistant.plugin.suggestion.metadata.json.SpringConfigurationMetadataValueProviderTypeDeserializer;
 import org.apache.commons.collections4.Trie;
 import org.apache.commons.collections4.trie.PatriciaTrie;
-import org.apache.commons.lang.time.StopWatch;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.StopWatch;
 
 import javax.annotation.Nullable;
 import java.io.BufferedReader;
