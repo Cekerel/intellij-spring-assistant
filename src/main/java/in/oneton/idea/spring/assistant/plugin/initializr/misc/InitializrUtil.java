@@ -10,6 +10,7 @@ import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.ui.CollectionComboBoxModel;
 import com.intellij.ui.table.JBTable;
 import in.oneton.idea.spring.assistant.plugin.initializr.metadata.InitializerMetadata.IdContainer;
+import in.oneton.idea.spring.assistant.plugin.initializr.metadata.io.spring.initializr.util.Version;
 import lombok.experimental.UtilityClass;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -54,6 +55,21 @@ public class InitializrUtil {
     }
     return new CollectionComboBoxModel<>(values, defaultIdAndName);
   }
+
+    @NotNull
+    public static <T extends IdContainer> CollectionComboBoxModel<T> newCollectionComboBoxModelForBootVersion(
+            @NotNull List<T> values, @Nullable String defaultValueId) {
+        T defaultIdAndName = null;
+        if (!isEmpty(defaultValueId)) {
+            for (T idAndName : values) {
+                if (Version.parse(idAndName.getId()).toString().equals(defaultValueId)) {
+                    defaultIdAndName = idAndName;
+                    break;
+                }
+            }
+        }
+        return new CollectionComboBoxModel<>(values, defaultIdAndName);
+    }
 
   /**
    * Set defaults so that the table looks & acts more like a list

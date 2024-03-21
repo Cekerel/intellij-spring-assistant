@@ -107,7 +107,7 @@ public final class Version implements Serializable, Comparable<Version> {
   @Override
   public String toString() {
     return major + "." + minor + "." + patch + (qualifier != null ?
-        "." + qualifier.qualifier + (qualifier.version != null ? qualifier.version : "") :
+        "-" + qualifier.qualifier + (qualifier.version != null ? qualifier.version : "") :
         "");
   }
 

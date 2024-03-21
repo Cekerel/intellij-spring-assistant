@@ -75,7 +75,7 @@ public class VersionParser {
     String patch = matcher.group(3);
     Version.Qualifier qualifier = null;
     String qualifierId = matcher.group(4);
-    if (!isEmpty(qualifierId)) {
+    if (!isEmpty(qualifierId) && !isEmpty(qualifierId = qualifierId.replace("BUILD-", "").replace("RELEASE", ""))) {
       qualifier = new Version.Qualifier(qualifierId);
       String o = matcher.group(5);
       if (o != null) {

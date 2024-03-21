@@ -47,7 +47,7 @@ import static com.intellij.openapi.util.text.StringUtil.isEmpty;
 import static com.intellij.openapi.wm.IdeFocusManager.getGlobalInstance;
 import static com.intellij.ui.components.JBList.createDefaultListModel;
 import static com.intellij.ui.speedSearch.SpeedSearchUtil.applySpeedSearchHighlighting;
-import static in.oneton.idea.spring.assistant.plugin.initializr.misc.InitializrUtil.newCollectionComboBoxModel;
+import static in.oneton.idea.spring.assistant.plugin.initializr.misc.InitializrUtil.newCollectionComboBoxModelForBootVersion;
 import static java.util.Objects.requireNonNull;
 
 public class DependencySelection implements Disposable, DependencySelectionChangeListener {
@@ -121,7 +121,7 @@ public class DependencySelection implements Disposable, DependencySelectionChang
     String defaultBootVersionId = defaultBootVersion != null ? defaultBootVersion.toString() : null;
 
     CollectionComboBoxModel<IdAndName> bootVersionComboBoxModel =
-        newCollectionComboBoxModel(bootVersions, defaultBootVersionId);
+            newCollectionComboBoxModelForBootVersion(bootVersions, defaultBootVersionId);
     bootVersion.setModel(bootVersionComboBoxModel);
 
     ColoredListCellRenderer<DependencyGroup> categoryRenderer =
