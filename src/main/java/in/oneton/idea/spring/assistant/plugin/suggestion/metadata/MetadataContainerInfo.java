@@ -63,7 +63,7 @@ public class MetadataContainerInfo {
 
   private static VirtualFile getContainerFile(VirtualFile fileContainer) {
     if (fileContainer.getFileType() == ARCHIVE) {
-      return requireNonNull(JarFileSystem.getInstance().getLocalVirtualFileFor(fileContainer));
+      return requireNonNull(JarFileSystem.getInstance().getVirtualFileForJar(fileContainer));
     } else {
       return fileContainer;
     }
