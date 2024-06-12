@@ -23,7 +23,7 @@ plugins {
 
 
 group = 'in.oneton.idea.spring'
-version = '2024.1'
+version = '2024.2'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -87,7 +87,7 @@ tasks{
 //    }
     patchPluginXml {
         sinceBuild = '241'
-        untilBuild = '241.*'
+        untilBuild = '242.*'
         pluginDescription = provider {readmeXmlAsHtml()}
         changeNotes = provider {changeLogAsHtml()}
     }

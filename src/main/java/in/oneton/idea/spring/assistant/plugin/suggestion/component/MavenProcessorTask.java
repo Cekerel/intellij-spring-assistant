@@ -2,13 +2,12 @@ package in.oneton.idea.spring.assistant.plugin.suggestion.component;
 
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import in.oneton.idea.spring.assistant.plugin.suggestion.service.SuggestionService;
-import org.jetbrains.idea.maven.project.MavenConsole;
 import org.jetbrains.idea.maven.project.MavenEmbeddersManager;
 import org.jetbrains.idea.maven.project.MavenProjectsProcessorTask;
-import org.jetbrains.idea.maven.utils.MavenProgressIndicator;
 
 public class MavenProcessorTask implements MavenProjectsProcessorTask {
 
@@ -22,8 +21,7 @@ public class MavenProcessorTask implements MavenProjectsProcessorTask {
 
 
   @Override
-  public void perform(Project project, MavenEmbeddersManager mavenEmbeddersManager,
-      MavenConsole mavenConsole, MavenProgressIndicator mavenProgressIndicator) {
+  public void perform(Project project, MavenEmbeddersManager mavenEmbeddersManager, ProgressIndicator progressIndicator) {
     debug(() -> log.debug(
         "Project imported successfully, will trigger indexing via dumbservice for project "
             + project.getName()));
