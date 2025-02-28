@@ -23,7 +23,7 @@ plugins {
 
 
 group = 'in.oneton.idea.spring'
-version = '2024.2'
+version = '2024.3'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -54,7 +54,7 @@ configurations {
 dependencies {
 
     ['annotationProcessor', 'compileOnly', 'testAnnotationProcessor', 'testCompileOnly']
-            .each { conf -> add(conf, 'org.projectlombok:lombok:1.18.20') }
+            .each { conf -> add(conf, 'org.projectlombok:lombok:1.18.34') }
 
     implementation 'org.apache.commons:commons-collections4:4.4'
     implementation 'com.miguelfonseca.completely:completely-core:0.9.0'
@@ -72,7 +72,7 @@ clean.doFirst {
 intellij {
     type = 'IC'
 //    version = '232.8453-EAP-CANDIDATE-SNAPSHOT'
-    version = '2024.1'
+    version = '2024.3'
     pluginName = 'intellij-spring-helper'
     plugins = ['java', 'properties', 'yaml', 'maven', 'gradle']
     updateSinceUntilBuild = false
@@ -87,9 +87,14 @@ tasks{
 //    }
     patchPluginXml {
         sinceBuild = '241'
-        untilBuild = '242.*'
+        untilBuild = '245.*'
         pluginDescription = provider {readmeXmlAsHtml()}
         changeNotes = provider {changeLogAsHtml()}
+    }
+
+
+    initializeIntelliJPlugin {
+        selfUpdateCheck = false
     }
 }
 
