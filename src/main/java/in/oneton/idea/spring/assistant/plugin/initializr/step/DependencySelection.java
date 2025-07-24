@@ -106,7 +106,7 @@ public class DependencySelection implements Disposable, DependencySelectionChang
     AnAction findFocusAction = new AnAction() {
       @Override
       public void actionPerformed(AnActionEvent e) {
-        getGlobalInstance().doWhenFocusSettlesDown(
+        SwingUtilities.invokeLater(
             () -> getGlobalInstance().requestFocus(filter.getTextEditor(), true));
       }
     };

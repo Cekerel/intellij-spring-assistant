@@ -25,8 +25,9 @@
 
     <depends>com.intellij.modules.java</depends>
     <depends>com.intellij.modules.lang</depends>
+    <!-- What introduced here should be also introduced in build.gradle's dependencies -->
+    <depends>com.intellij.java</depends>
     <depends>org.jetbrains.plugins.yaml</depends>
-    <depends>com.intellij.properties</depends>
     <depends config-file="maven.xml" optional="true">org.jetbrains.idea.maven</depends>
     <depends config-file="gradle.xml" optional="true">com.intellij.gradle</depends>
     <!--    <depends config-file="gradle.xml" optional="true">org.jetbrains.plugins.gradle</depends>-->

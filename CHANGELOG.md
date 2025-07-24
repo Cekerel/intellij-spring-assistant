@@ -1,3 +1,7 @@
+### Since 1.0.7 (24 Jul 2025):
+  - Support for IntelliJ Platform Gradle Plugin 2.6.0
+  - Support for IntelliJ IDEA Community 2025.1.2+
+
 ### Since 1.0.0 (1 Feb 2021):
 
   - Fixed bugs

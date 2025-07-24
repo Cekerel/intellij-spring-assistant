@@ -1,6 +1,7 @@
 import com.vladsch.flexmark.html.HtmlRenderer
 import com.vladsch.flexmark.parser.Parser
 import com.vladsch.flexmark.util.ast.Document
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 buildscript {
     repositories {
@@ -17,17 +18,15 @@ buildscript {
 
 plugins {
     id 'java'
-    id 'idea'
-    id 'org.jetbrains.intellij' version '1.17.3'
+    id 'org.jetbrains.intellij.platform' version '2.6.0'
+    id 'org.jetbrains.intellij.platform.migration' version '2.6.0'
 }
 
 
 group = 'in.oneton.idea.spring'
-version = '2024.3'
+version = '2025.1.2'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
 }
 
 compileJava.options.encoding = 'UTF-8'
@@ -40,6 +39,9 @@ repositories {
         url 'https://maven.aliyun.com/repository/public'
     }
     mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
 configurations {
@@ -52,6 +54,16 @@ configurations {
 }
 
 dependencies {
+    intellijPlatform {
+        intellijIdeaCommunity '2025.1.2'
+
+        bundledPlugin 'com.intellij.java'
+        bundledPlugin 'org.jetbrains.plugins.yaml'
+        bundledPlugin 'com.intellij.gradle'
+        bundledPlugin 'org.jetbrains.idea.maven'
+
+        testFramework TestFrameworkType.Platform.INSTANCE
+    }
 
     ['annotationProcessor', 'compileOnly', 'testAnnotationProcessor', 'testCompileOnly']
             .each { conf -> add(conf, 'org.projectlombok:lombok:1.18.34') }
@@ -68,14 +80,15 @@ clean.doFirst {
     delete 'build', 'out'
 }
 
-// See https://github.com/JetBrains/gradle-intellij-plugin/
-intellij {
-    type = 'IC'
-//    version = '232.8453-EAP-CANDIDATE-SNAPSHOT'
-    version = '2024.3'
-    pluginName = 'intellij-spring-helper'
-    plugins = ['java', 'properties', 'yaml', 'maven', 'gradle']
-    updateSinceUntilBuild = false
+// See {@link https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html}
+intellijPlatform {
+    pluginConfiguration {
+        ideaVersion {
+            sinceBuild = "241"
+        }
+        changeNotes = provider {changeLogAsHtml()}
+        description = provider {readmeXmlAsHtml()}
+    }
 }
 
 tasks{
@@ -86,16 +99,11 @@ tasks{
 //        channels 'eap', 'nightly', 'default'
 //    }
     patchPluginXml {
-        sinceBuild = '241'
-        untilBuild = '245.*'
+        sinceBuild = '203'
         pluginDescription = provider {readmeXmlAsHtml()}
         changeNotes = provider {changeLogAsHtml()}
     }
 
-
-    initializeIntelliJPlugin {
-        selfUpdateCheck = false
-    }
 }
 
 String readmeXmlAsHtml() {

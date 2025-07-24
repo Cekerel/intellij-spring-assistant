@@ -51,7 +51,6 @@ import static com.intellij.psi.CommonClassNames.JAVA_UTIL_MAP;
 import static com.intellij.psi.JavaPsiFacade.getElementFactory;
 import static com.intellij.psi.PsiModifier.PUBLIC;
 import static com.intellij.psi.PsiModifier.STATIC;
-import static com.intellij.psi.PsiType.NULL;
 import static com.intellij.psi.util.CachedValueProvider.Result.create;
 import static com.intellij.psi.util.CachedValuesManager.getCachedValue;
 import static com.intellij.psi.util.InheritanceUtil.isInheritor;

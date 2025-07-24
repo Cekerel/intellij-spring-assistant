@@ -8,4 +8,4 @@ pluginManagement {
     gradlePluginPortal()
   }
 }
-rootProject.name = 'intellij-spring-assistant'
+rootProject.name = 'intellij-spring-initializer'
